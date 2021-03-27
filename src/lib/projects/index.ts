@@ -24,10 +24,11 @@ import lpuGWA from "./lpu-gwa";
 import lpuLMS from "./lpu-lms";
 import lpuLMSV2 from "./lpu-lms-v2";
 import others from "./others";
+import chcepe from "./chcepe";
 
 export const homeProjects = [craveCatering, craveAdmin, coinflip];
 
-export const openSourceProjects = [swapiDev, simpleBottomSheet];
+export const openSourceProjects = [swapiDev, simpleBottomSheet, chcepe];
 
 export const projects = [
   craveCatering,
