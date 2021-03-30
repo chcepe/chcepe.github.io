@@ -53,8 +53,15 @@ const Hello: FC = () => (
       </Link>
       , helping them build products from scratch for startups. In my free time,
       I enjoy working on side projects to practice my skills outside of work.
-      When I’m not coding, I find myself going for outdoor activities,
-      traveling, attending meetups, and doing some video editing.
+      When I’m not coding, I find myself going for outdoor activities,{" "}
+      <Link href="https://instagram.com/nuxcape" target="_blank">
+        traveling
+      </Link>
+      , attending meetups, and doing some{" "}
+      <Link href="https://www.youtube.com/c/chcepe/videos" target="_blank">
+        video editing
+      </Link>
+      .
     </Text>
     <S.SocialLinks>
       {SOCIAL_LINKS.map(({ id, icon, link, name }) => (
