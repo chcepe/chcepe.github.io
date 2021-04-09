@@ -1,6 +1,7 @@
 import Home from "pages/index";
 import Projects from "pages/projects";
 import Project from "pages/project";
+import Videos from "pages/videos";
 
 const ROUTES = {
   HOME: {
@@ -17,6 +18,11 @@ const ROUTES = {
     path: "/projects/:id",
     component: Project,
     exact: false,
+  },
+  VIDEOS: {
+    path: "/videos",
+    component: Videos,
+    exact: true,
   },
 };
 

@@ -15,7 +15,7 @@ const Hello: FC = () => (
       Download CV
     </S.CVBtn>
     <Text lineHeight="30px" block>
-      I'm from the{" "}
+      I'm a software engineer from the{" "}
       <Link href="https://en.wikipedia.org/wiki/Philippines" target="_blank">
         Philippines
       </Link>
@@ -29,22 +29,35 @@ const Hello: FC = () => (
       <Link href="https://studentambassadors.microsoft.com/" target="_blank">
         MSP
       </Link>
-      ; together with my{" "}
+      ; together with my team, we competed and won in{" "}
       <Link
         href="https://news.microsoft.com/en-ph/2017/05/04/imaginecupregionalfinals/"
         target="_blank"
       >
-        team
+        Imagine Cup PH
+      </Link>{" "}
+      and also in{" "}
+      <Link
+        href="https://www.youtube.com/watch?v=-QGLMV46ug8&ab_channel=MicrosoftAsia"
+        target="_blank"
+      >
+        Southeast Asia Finals
       </Link>
-      , we competed in Microsoft HQ for{" "}
+      . Later, we represented our country in the{" "}
+      <Link
+        href="https://www.geekwire.com/2017/microsoft-ceo-satya-nadella-student-innovators-youve-won-lottery-spend-wisely/"
+        target="_blank"
+      >
+        world finals
+      </Link>{" "}
+      and won{" "}
       <Link
         href="https://www.rappler.com/technology/features/opticode-minerva-microsoft-imagine-cup-2017"
         target="_blank"
       >
-        Imagine Cup
-      </Link>{" "}
-      and won the 8th place over 50+ teams around the world. Since then, I
-      started my professional career.
+        8th place over 50+ teams around the world
+      </Link>
+      . Since then, I started my professional career.
       <br />
       <br />
       Now, I am working{" "}

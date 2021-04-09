@@ -10,6 +10,7 @@ interface Platform {
 }
 
 export type PlatformType = "web" | "android" | "ios" | "github";
+
 export type Role =
   | "founder"
   | "frontend"
@@ -17,6 +18,7 @@ export type Role =
   | "team-lead"
   | "ui-ux-designer"
   | "motion-designer";
+
 export type Company =
   | "oakslab"
   | "techoneglobal"

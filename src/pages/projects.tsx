@@ -9,7 +9,7 @@ const ProjectsPage: FC = () => {
   return (
     <Layout title="Projects" header={<Header />}>
       <Projects
-        title="Projects"
+        title="🚀 Projects"
         desc="Some of my opensource projects written in TypeScript and React"
         projects={openSourceProjects}
       />

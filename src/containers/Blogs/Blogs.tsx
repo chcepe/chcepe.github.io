@@ -23,8 +23,8 @@ const Blogs: FC<T.Props> = () => {
   return (
     <S.Wrapper
       autoHeight
-      title="Blogs"
-      desc="I like to write sometimes during my free time"
+      title="📝 Blogs"
+      desc="I also like to write sometimes during my free time"
     >
       {loadingBlogs ? (
         <Skeletons />

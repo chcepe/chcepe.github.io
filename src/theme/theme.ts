@@ -11,6 +11,7 @@ export const lightMode = {
     background: "#ffffff",
     color: "#000",
   },
+  avatar: `linear-gradient(to top right,rgba(57,4,149,0.8), rgb(149,57,4))`,
   socialIcons: {
     color: "#000",
   },
@@ -45,6 +46,7 @@ export const darkMode: Theme = {
     background: "#212121",
     color: "#fff",
   },
+  avatar: `#3c3c3c`,
   socialIcons: {
     color: "#fff",
   },
