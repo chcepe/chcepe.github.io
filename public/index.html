@@ -26,7 +26,7 @@
       sizes="16x16"
       href="%PUBLIC_URL%/images/icons/favicon-16x16.png"
     />
-    <!-- <link rel="manifest" href="%PUBLIC_URL%/simages/icons/site.webmanifest" /> -->
+    <link rel="manifest" href="%PUBLIC_URL%/images/icons/site.webmanifest" />
     <link
       rel="mask-icon"
       href="%PUBLIC_URL%/images/icons/safari-pinned-tab.svg"
@@ -48,7 +48,7 @@
     <meta property="og:title" content="Christian Cepe | Portfolio" />
     <meta
       property="og:description"
-      content="He is a software engineer, graphic design enthusiast, and an aspiring change-maker."
+      content="I'm a software engineer from the Philippines, currently based in Prague."
     />
     <meta
       property="og:image"
@@ -60,12 +60,17 @@
     <meta name="twitter:title" content="Christian Cepe | Portfolio" />
     <meta
       name="twitter:description"
-      content="He is a software engineer, graphic design enthusiast, and an aspiring change-maker."
+      content="I'm a software engineer from the Philippines, currently based in Prague."
     />
     <meta
       name="twitter:image"
       content="https://chcepe.github.io%PUBLIC_URL%/images/thumbnail.jpg"
     />
+    <script>
+      var urlParams = new URLSearchParams(window.location.search);
+      var t = urlParams.get("t");
+      if (!t) window.location = "/?t=" + new Date().getTime();
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
