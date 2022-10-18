@@ -60,13 +60,13 @@ const Hello: FC = () => (
       . Since then, I started my professional career.
       <br />
       <br />
-      Now, I am working{" "}
-      <Link href="https://oakslab.com" target="_blank">
-        @oakslab
+      Now, I am working at{" "}
+      <Link href="https://omio.com" target="_blank">
+        Omio
       </Link>
-      , helping them build products from scratch for startups. In my free time,
-      I enjoy working on side projects to practice my skills outside of work.
-      When I’m not coding, I find myself going for outdoor activities,{" "}
+      , helping them build products for their partners. In my free time, I enjoy
+      working on side projects to practice my skills outside of work. When I’m
+      not coding, I find myself going for outdoor activities, cooking,{" "}
       <Link href="https://instagram.com/nuxcape" target="_blank">
         traveling
       </Link>
