@@ -1,11 +1,11 @@
-import React, { FC } from "react";
+import React from "react";
 
 import Text from "components/Text";
 
 import * as S from "./styles";
 import * as T from "./types";
 
-const Section: FC<T.Props> = ({
+const Section: React.FC<T.Props> = ({
   children,
   title,
   desc,

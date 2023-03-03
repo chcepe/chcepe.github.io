@@ -1,9 +1,9 @@
-import { ReactNode } from "react";
+import React from "react";
 
-export interface Props {
+export interface Props extends React.PropsWithChildren {
   title: string;
   fixedHeader?: boolean;
-  header?: ReactNode;
+  header?: React.ReactNode;
 }
 
 export type HeaderType = "no" | "fixed" | "fixed-bg" | "normal";

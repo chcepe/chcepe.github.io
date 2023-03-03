@@ -15,7 +15,11 @@ const { GlobalStyles } = theme;
 
 export const AppContext = createContext<T.Props>(INITIAL_VALUES);
 
-const AppContextProvider: FC = ({ children }) => {
+interface Props {
+  children: React.ReactNode;
+}
+
+const AppContextProvider: FC<Props> = ({ children }) => {
   const [playLightsOn] = useSound(SOUNDS.lightsOn);
   const [playLightsOff] = useSound(SOUNDS.lightsOff);
   const [playPopOn] = useSound(SOUNDS.popOn);
@@ -78,8 +82,10 @@ const AppContextProvider: FC = ({ children }) => {
       }}
     >
       <ThemeProvider theme={darkMode ? theme.darkMode : theme.lightMode}>
-        <GlobalStyles />
-        {children}
+        <>
+          <GlobalStyles />
+          {children}
+        </>
       </ThemeProvider>
     </AppContext.Provider>
   );

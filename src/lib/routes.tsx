@@ -7,12 +7,10 @@ const ALL_ROUTES = Object.keys(ROUTES).map((key) => {
   return <Route key={path} path={path} component={component} exact={exact} />;
 });
 
-const Routes = () => {
-  return (
-    <Router>
-      <Switch>{ALL_ROUTES}</Switch>
-    </Router>
-  );
-};
+const Routes = () => (
+  <Router>
+    <Switch>{ALL_ROUTES}</Switch>
+  </Router>
+);
 
 export default Routes;

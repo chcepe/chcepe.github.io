@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from "react";
+import React from "react";
 
 import Container from "components/Container";
 import { DOCUMENT_TITLE } from "utils/contants";
@@ -6,13 +6,13 @@ import { DOCUMENT_TITLE } from "utils/contants";
 import * as S from "./styles";
 import * as T from "./types";
 
-const Layout: FC<T.Props> = ({
+const Layout: React.FC<T.Props> = ({
   children,
   title,
   header,
   fixedHeader = true,
 }) => {
-  const [scrollTop, setScrollTop] = useState(0);
+  const [scrollTop, setScrollTop] = React.useState(0);
 
   let headerType: T.HeaderType = "no";
 
@@ -22,7 +22,7 @@ const Layout: FC<T.Props> = ({
   if (fixedHeader) headerType = "fixed";
   if (scrollTop >= 70 && fixedHeader) headerType = "fixed-bg";
 
-  useEffect(() => {
+  React.useEffect(() => {
     document.title = `${DOCUMENT_TITLE} - ${title}`;
     if (fixedHeader) {
       const logit = () => {

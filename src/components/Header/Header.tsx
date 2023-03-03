@@ -14,9 +14,8 @@ const Header: FC<T.Props> = ({ title, withBack = true }) => {
 
   const [playPop] = useSound(SOUNDS.pop);
 
-  const { darkMode, toggleDarkMode, withSound, toggleWithSound } = useContext(
-    AppContext
-  );
+  const { darkMode, toggleDarkMode, withSound, toggleWithSound } =
+    useContext(AppContext);
 
   const handleBack = () => {
     if (withSound) playPop();

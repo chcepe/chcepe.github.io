@@ -1,11 +1,6 @@
 import Header from "components/Header";
 import Layout from "components/Layout";
-import Blogs from "containers/Blogs";
-import Footer from "containers/Footer";
 import Hello from "containers/Hello";
-import Projects from "containers/Projects";
-import Videos from "containers/Videos";
-import { homeProjects } from "lib/projects";
 
 const IndexPage = () => {
   return (
@@ -15,15 +10,6 @@ const IndexPage = () => {
       title="Ahoj!"
     >
       <Hello />
-      <Projects
-        title="🚀 Projects"
-        desc="Some of the projects I've worked on"
-        projects={homeProjects}
-        viewAll
-      />
-      <Videos />
-      <Blogs />
-      <Footer />
     </Layout>
   );
 };
