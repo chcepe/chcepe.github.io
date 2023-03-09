@@ -22,7 +22,7 @@ export const WORK_EXPERIENCES: WorkExperienceProps[] = [
     ],
     company: {
       name: "Omio",
-      logo: "/images/companies/omio.jpeg",
+      logo: "/images/company-logos/omio.jpg",
     },
     achievements: [
       <>
@@ -91,7 +91,7 @@ export const WORK_EXPERIENCES: WorkExperienceProps[] = [
     ],
     company: {
       name: "OAK'S LAB",
-      logo: "/images/companies/oakslab.jpeg",
+      logo: "/images/company-logos/oakslab.jpg",
     },
     achievements: [
       <>
@@ -167,7 +167,7 @@ export const WORK_EXPERIENCES: WorkExperienceProps[] = [
     ],
     company: {
       name: "Accenture",
-      logo: "/images/companies/accenture.jpeg",
+      logo: "/images/company-logos/accenture.jpg",
     },
     achievements: [
       <>
@@ -210,7 +210,7 @@ export const WORK_EXPERIENCES: WorkExperienceProps[] = [
     ],
     company: {
       name: "Tech One Global",
-      logo: "/images/companies/techone.jpeg",
+      logo: "/images/company-logos/techone.jpg",
     },
     achievements: [
       <>
@@ -249,7 +249,7 @@ export const WORK_EXPERIENCES: WorkExperienceProps[] = [
     ],
     company: {
       name: "Tech One Global",
-      logo: "/images/companies/microsoft.jpeg",
+      logo: "/images/company-logos/microsoft.jpg",
     },
     achievements: [
       <>

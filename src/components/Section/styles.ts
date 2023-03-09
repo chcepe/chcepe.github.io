@@ -4,7 +4,8 @@ import { Props } from "./Section";
 
 export const Wrapper = styled.section<Props>`
   width: 100%;
-  min-height: 100vh;
+  ${({ autoHeight }) =>
+    !autoHeight ? "min-height: 100vh;" : "height:auto; margin: 88px 0;"}
   display: flex;
   justify-content: ${({ center }) =>
     center === "all" || center === "horizontally" ? "center" : "flex-start"};

@@ -1,4 +1,4 @@
-import styled, { color } from "theme";
+import styled, { breakpoint, color } from "theme";
 
 export const Wrapper = styled.div`
   width: 100%;
@@ -44,6 +44,12 @@ export const Title = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @${breakpoint.mobile} {
+    flex-direction: column-reverse;
+    justify-content: start;
+    align-items: start;
+  }
 `;
 
 export const TechItems = styled.div`
@@ -52,6 +58,10 @@ export const TechItems = styled.div`
 
   span:not(:first-of-type) {
     margin: 4px;
+  }
+
+  @${breakpoint.mobile} {
+    max-width: 100%;
   }
 `;
 
