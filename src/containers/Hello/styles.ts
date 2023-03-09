@@ -11,24 +11,6 @@ export const Wrapper = styled(Section)`
   overflow: hidden;
   border-bottom-right-radius: 16px;
   border-bottom-left-radius: 16px;
-
-  span.intro,
-  span.name,
-  span.desc {
-    line-height: 60px;
-  }
-
-  @${breakpoint.mobile} {
-    span.intro,
-    span.name {
-      line-height: 48px;
-    }
-
-    span.desc {
-      margin-top: 18px;
-      line-height: 20px;
-    }
-  }
 `;
 
 export const BG = styled.div`
@@ -60,17 +42,17 @@ export const SocialLinks = styled.div`
 `;
 
 export const NotesWrapper = styled.div`
-  background: rgba(217, 217, 217, 0.8);
+  background: rgba(235, 235, 235, 0.7);
   border: 1px solid #a6a6a6;
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: inset 1px 1px 1px 0 rgba(255, 255, 255, 0.5),
-    0px 10px 50px 0px rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(1px);
+  box-shadow: 0px 10px 50px 0px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(2px);
 `;
 
 export const NotesHeader = styled.div`
-  background: rgba(217, 217, 217, 1);
+  background: rgba(223, 223, 223, 1);
+  box-shadow: inset 1px 1px 1px 0 rgba(255, 255, 255, 0.5);
   display: flex;
   padding: 16px 24px;
   gap: 8px;
@@ -78,6 +60,26 @@ export const NotesHeader = styled.div`
 
 export const NotesContent = styled.div`
   padding: 20px 40px;
+
+  span.intro,
+  span.name,
+  span.desc {
+    line-height: 60px;
+  }
+
+  @${breakpoint.mobile} {
+    padding: 24px;
+
+    span.intro,
+    span.name {
+      line-height: 46px;
+    }
+
+    span.desc {
+      margin-top: 18px;
+      line-height: 20px;
+    }
+  }
 `;
 
 export const NotesNavs = styled.div<{ $color: string }>`
@@ -85,4 +87,5 @@ export const NotesNavs = styled.div<{ $color: string }>`
   height: 18px;
   background: ${({ $color }) => $color};
   border-radius: 100%;
+  border: 0.2px solid #a6a6a6;
 `;

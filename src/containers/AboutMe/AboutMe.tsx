@@ -14,9 +14,12 @@ const AboutMe: FC = () => {
 
   return (
     <Styled.Wrapper autoHeight header={{ title: "About me" }}>
-      <Styled.Avatar>
+      <Styled.Avatar />
+
+      <Styled.RocketContainer>
         <Styled.Rocket ref={parallaxRocket.ref} />
-      </Styled.Avatar>
+      </Styled.RocketContainer>
+
       <Text marginB={16} lineHeight="28px" block>
         My name is Chris and I love building things for the web.
         <br />

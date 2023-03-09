@@ -5,7 +5,7 @@ import { Props } from "./Section";
 export const Wrapper = styled.section<Props>`
   width: 100%;
   ${({ autoHeight }) =>
-    !autoHeight ? "min-height: 100vh;" : "height:auto; margin: 88px 0;"}
+    !autoHeight ? "min-height: 100vh;" : "height:auto; padding: 88px 0;"}
   display: flex;
   justify-content: ${({ center }) =>
     center === "all" || center === "horizontally" ? "center" : "flex-start"};

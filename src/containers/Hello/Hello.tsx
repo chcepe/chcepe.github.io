@@ -6,13 +6,15 @@ import Text from "components/Text";
 
 import * as Styled from "./styles";
 import { SOCIAL_LINKS } from "./constants";
+import Time from "./Time";
 
 const Hello: FC = () => {
   const parallaxBG = useParallax<HTMLDivElement>({
     speed: -10,
     scale: [1.5, 3],
-    opacity: [0.6, 0.3],
+    opacity: [1, 0.3],
     shouldAlwaysCompleteAnimation: true,
+    rotate: [0, 20],
   });
 
   const parallaxNotes = useParallax<HTMLDivElement>({
@@ -23,12 +25,15 @@ const Hello: FC = () => {
   const parallaxSocials = useParallax<HTMLDivElement>({
     opacity: [1, 0],
     shouldAlwaysCompleteAnimation: true,
+    scaleY: [1, 0],
   });
 
   return (
     <Styled.Wrapper center="all">
       <Styled.BG ref={parallaxBG.ref} />
+
       <div ref={parallaxNotes.ref}>
+        <Time />
         <Styled.NotesWrapper>
           <Styled.NotesHeader>
             <Styled.NotesNavs $color="#ec6a5e" />
