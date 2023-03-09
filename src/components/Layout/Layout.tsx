@@ -4,48 +4,18 @@ import Container from "components/Container";
 import { DOCUMENT_TITLE } from "utils/contants";
 
 import * as S from "./styles";
-import * as T from "./types";
 
-const Layout: React.FC<T.Props> = ({
-  children,
-  title,
-  header,
-  fixedHeader = true,
-}) => {
-  const [scrollTop, setScrollTop] = React.useState(0);
+interface Props extends React.PropsWithChildren {
+  title: string;
+}
 
-  let headerType: T.HeaderType = "no";
-
-  const hasHeader = Boolean(header);
-
-  if (hasHeader) headerType = "normal";
-  if (fixedHeader) headerType = "fixed";
-  if (scrollTop >= 70 && fixedHeader) headerType = "fixed-bg";
-
+const Layout: React.FC<Props> = ({ children, title }) => {
   React.useEffect(() => {
     document.title = `${DOCUMENT_TITLE} - ${title}`;
-    if (fixedHeader) {
-      const logit = () => {
-        setScrollTop(window.pageYOffset);
-      };
-
-      const watchScroll = () => {
-        window.addEventListener("scroll", logit);
-      };
-      watchScroll();
-      return () => {
-        window.removeEventListener("scroll", logit);
-      };
-    }
-  });
+  }, [title]);
 
   return (
-    <S.Wrapper headerType={headerType}>
-      {header && (
-        <S.Header headerType={headerType}>
-          <Container>{header}</Container>
-        </S.Header>
-      )}
+    <S.Wrapper>
       <Container>{children}</Container>
     </S.Wrapper>
   );

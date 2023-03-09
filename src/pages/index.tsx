@@ -1,15 +1,14 @@
-import Header from "components/Header";
 import Layout from "components/Layout";
+import AboutMe from "containers/AboutMe";
 import Hello from "containers/Hello";
+import Work from "containers/Work";
 
 const IndexPage = () => {
   return (
-    <Layout
-      fixedHeader={false}
-      header={<Header withBack={false} />}
-      title="Ahoj!"
-    >
+    <Layout title="Hello!">
       <Hello />
+      <AboutMe />
+      <Work />
     </Layout>
   );
 };

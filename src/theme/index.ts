@@ -1,13 +1,22 @@
 import { darkMode, GlobalStyles, lightMode, styled } from "./theme";
 
+const generateFontSize = (
+  minSize: number,
+  maxSize: number,
+  maxWidth = 1600,
+  minWidth = 300
+) => {
+  return `calc(${minSize}px + (${maxSize} - ${minSize}) * ((100vw - ${minWidth}px) / (${maxWidth} - ${minWidth})))`;
+};
+
 const fontSize = {
-  sm: "10px",
-  md: "12px",
-  lg: "16px",
-  xl: "20px",
-  h1: "36px",
-  h2: "30px",
-  h3: "24px",
+  regular: generateFontSize(14, 16),
+  xs: generateFontSize(12, 14),
+  sm: generateFontSize(12, 16),
+  md: generateFontSize(24, 32),
+  lg: generateFontSize(36, 48),
+  xl: generateFontSize(48, 58),
+  xxl: generateFontSize(60, 72),
 };
 
 const breakpoint = {
@@ -35,11 +44,12 @@ const color = {
   transparent: "rgba(0,0,0,0)",
   white: "#ffffff",
   black: "#000000",
-  dark: "#212121",
-  dark10: "#474747",
-  dark20: "#3b3b3b",
-  dark30: "#2e2e2e",
-  grey91: "#e8e8e8",
+  grey100: "#5A5A5A",
+  grey90: "#1a1a1a",
+  grey80: "#4d4d4d",
+  grey70: "#808080",
+  grey60: "#b3b3b3",
+  grey50: "#e6e6e6",
   link: "#2a9df4",
 };
 

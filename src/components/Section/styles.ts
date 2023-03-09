@@ -1,21 +1,23 @@
 import styled from "styled-components";
 
-import { margin } from "theme";
+import { Props } from "./Section";
 
-export const Wrapper = styled.div<{
-  withHeader?: boolean;
-  autoHeight?: boolean;
-}>(
-  ({ withHeader, autoHeight }) => `
+export const Wrapper = styled.section<Props>`
   width: 100%;
-  ${!autoHeight ? "min-height: 100vh;" : ""}
-  display: grid;
-  grid-template-rows: ${withHeader ? "auto 1fr" : "1fr"};
-`
-);
-
-export const Header = styled.div`
-  margin-bottom: ${margin.xxl};
+  min-height: 100vh;
+  display: flex;
+  justify-content: ${({ center }) =>
+    center === "all" || center === "horizontally" ? "center" : "flex-start"};
+  justify-content: ${({ center }) =>
+    center === "all" || center === "vertically" ? "center" : "flex-start"};
+  flex-direction: column;
 `;
 
-export const Content = styled.div``;
+export const Header = styled.div`
+  width: 100%;
+  margin-bottom: 16px;
+`;
+
+export const Content = styled.div`
+  width: 100%;
+`;

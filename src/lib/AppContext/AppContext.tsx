@@ -1,58 +1,44 @@
 import { createContext, FC, useEffect, useState } from "react";
 import axios from "axios";
-import useSound from "use-sound";
 import { ThemeProvider } from "styled-components";
 
 import useLocalStorage from "utils/hooks/useLocalStorage";
 import { theme } from "theme";
 import { Blog } from "utils/types";
-import SOUNDS from "utils/sounds";
-
-import { INITIAL_VALUES } from "./constants";
-import * as T from "./types";
 
 const { GlobalStyles } = theme;
 
-export const AppContext = createContext<T.Props>(INITIAL_VALUES);
+interface ContextProps {
+  darkMode: boolean;
+  toggleDarkMode: () => void;
+
+  blogs: Blog[];
+  loadingBlogs?: boolean;
+}
+
+const CONTEXT_INITIAL_VALUES: ContextProps = {
+  darkMode: false,
+  toggleDarkMode: () => {},
+
+  blogs: [],
+};
+
+export const AppContext = createContext<ContextProps>(CONTEXT_INITIAL_VALUES);
 
 interface Props {
   children: React.ReactNode;
 }
 
 const AppContextProvider: FC<Props> = ({ children }) => {
-  const [playLightsOn] = useSound(SOUNDS.lightsOn);
-  const [playLightsOff] = useSound(SOUNDS.lightsOff);
-  const [playPopOn] = useSound(SOUNDS.popOn);
-  const [playPopOff] = useSound(SOUNDS.popOff);
-
   const [loadingBlogs, setLoadingBlogs] = useState(false);
-  const [withSound, setWithSound] = useLocalStorage<boolean>(
-    "soundmode",
-    INITIAL_VALUES.withSound
-  );
   const [darkMode, setDarkMode] = useLocalStorage<boolean>(
     "darkmode",
-    INITIAL_VALUES.darkMode
+    CONTEXT_INITIAL_VALUES.darkMode
   );
 
   const [blogs, setBlogs] = useState<Blog[]>([]);
 
-  const toggleWithSound = () => {
-    if (withSound) {
-      playPopOff();
-    } else {
-      playPopOn();
-    }
-    setWithSound(!withSound);
-  };
   const toggleDarkMode = () => {
-    if (withSound) {
-      if (darkMode) {
-        playLightsOn();
-      } else {
-        playLightsOff();
-      }
-    }
     setDarkMode(!darkMode);
   };
 
@@ -75,8 +61,6 @@ const AppContextProvider: FC<Props> = ({ children }) => {
       value={{
         darkMode,
         toggleDarkMode,
-        withSound,
-        toggleWithSound,
         loadingBlogs,
         blogs,
       }}

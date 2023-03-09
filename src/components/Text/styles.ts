@@ -23,7 +23,7 @@ export const Text = styled.span<Props>`
   ${({
     display = "inline-block",
     block,
-    size = "lg",
+    size = "regular",
     marginB = 0,
     marginT = 0,
     marginL = 0,
