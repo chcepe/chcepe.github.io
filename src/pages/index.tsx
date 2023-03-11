@@ -1,5 +1,6 @@
 import Layout from "components/Layout";
 import AboutMe from "containers/AboutMe";
+import Blogs from "containers/Blogs";
 import Hello from "containers/Hello";
 import Work from "containers/Work";
 
@@ -9,6 +10,7 @@ const IndexPage = () => {
       <Hello />
       <AboutMe />
       <Work />
+      <Blogs />
     </Layout>
   );
 };

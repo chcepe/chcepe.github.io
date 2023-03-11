@@ -102,7 +102,7 @@ export const WORK_EXPERIENCES: WorkExperienceProps[] = [
         .
       </>,
       <>
-        Continiously improving{" "}
+        Continuosly improving{" "}
         <a target="_blank" href="https://oakslab.com/">
           oakslab.com
         </a>{" "}
@@ -248,7 +248,7 @@ export const WORK_EXPERIENCES: WorkExperienceProps[] = [
       "Microsoft 365",
     ],
     company: {
-      name: "Tech One Global",
+      name: "Microsoft",
       logo: "/images/company-logos/microsoft.jpg",
     },
     achievements: [

@@ -1,4 +1,4 @@
-import { FC } from "react";
+import React from "react";
 import Typewriter from "typewriter-effect";
 import { useParallax } from "react-scroll-parallax";
 
@@ -8,13 +8,12 @@ import * as Styled from "./styles";
 import { SOCIAL_LINKS } from "./constants";
 import Time from "./Time";
 
-const Hello: FC = () => {
+const Hello: React.FC = () => {
   const parallaxBG = useParallax<HTMLDivElement>({
     speed: -10,
-    scale: [1.5, 3],
+    scale: [1.3, 3],
     opacity: [1, 0.3],
     shouldAlwaysCompleteAnimation: true,
-    rotate: [0, 20],
   });
 
   const parallaxNotes = useParallax<HTMLDivElement>({
@@ -25,7 +24,6 @@ const Hello: FC = () => {
   const parallaxSocials = useParallax<HTMLDivElement>({
     opacity: [1, 0],
     shouldAlwaysCompleteAnimation: true,
-    scaleY: [1, 0],
   });
 
   return (
@@ -51,9 +49,7 @@ const Hello: FC = () => {
               <Typewriter
                 onInit={(typewriter) => {
                   typewriter
-                    .typeString(
-                      "A software engineer currently based in Prague."
-                    )
+                    .typeString("A software engineer based in Prague.")
                     .start();
                 }}
               />

@@ -1,10 +1,10 @@
-import { FC } from "react";
+import React from "react";
 import { useParallax } from "react-scroll-parallax";
 
 import Text from "components/Text";
 import * as Styled from "./styles";
 
-const AboutMe: FC = () => {
+const AboutMe: React.FC = () => {
   const parallaxRocket = useParallax<HTMLImageElement>({
     speed: -20,
     translateX: [0, 500],
@@ -13,7 +13,7 @@ const AboutMe: FC = () => {
   });
 
   return (
-    <Styled.Wrapper autoHeight header={{ title: "About me" }}>
+    <Styled.Wrapper header={{ title: "About me" }}>
       <Styled.Avatar />
 
       <Styled.RocketContainer>

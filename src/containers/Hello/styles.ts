@@ -2,11 +2,8 @@ import styled, { breakpoint, color, margin } from "theme";
 import Section from "components/Section";
 
 export const Wrapper = styled(Section)`
-  background: linear-gradient(
-    to top right,
-    rgba(57, 4, 149, 0.8),
-    rgb(149, 57, 4)
-  );
+  background: ${({ theme }) => theme.gradient};
+  height: 100vh;
   position: relative;
   overflow: hidden;
   border-bottom-right-radius: 16px;
@@ -22,21 +19,51 @@ export const BG = styled.div`
   position: absolute;
   top: 0;
   left: 0;
+  mix-blend-mode: soft-light;
+  pointer-events: none;
 `;
 
 export const SocialLinks = styled.div`
+  margin: ${margin.xl} auto;
+  padding: 16px;
+  width: min-content;
+  height: 100%;
   display: flex;
-  justify-content: center;
   gap: 8px;
-  margin-top: ${margin.xl};
+  border-radius: 16px;
+  align-items: center;
+  justify-content: center;
+  background: rgba(83, 83, 83, 0.25);
+  backdrop-filter: blur(13px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+
+  svg,
+  a {
+    transition: all 0.2s ease;
+  }
 
   a {
+    border-radius: 8px;
+    border: 1px solid transparent;
+    background: ${color.white};
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 24px;
-    color: ${color.white};
-    transition: all 0.2s ease;
+    color: ${color.black};
 
     :hover {
-      transform: translateY(2px);
+      background: ${({ theme }) => theme.gradient};
+      border-color: ${color.white};
+      margin: 0 16px;
+      transform: scale(1.8) translateY(2px);
+      transform-origin: center bottom;
+
+      svg {
+        fill: ${color.white};
+      }
     }
   }
 `;

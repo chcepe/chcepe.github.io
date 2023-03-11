@@ -1,12 +1,12 @@
-import { FC } from "react";
+import React from "react";
 
 import WorkExperience from "components/WorkExperience";
+import Section from "components/Section";
 
-import * as Styled from "./styles";
 import { WORK_EXPERIENCES } from "./contants";
 
-const Work: FC = () => (
-  <Styled.Wrapper
+const Work: React.FC = () => (
+  <Section
     header={{
       title: "Work Experience",
       desc: "5+ years of working in engineering.",
@@ -15,7 +15,7 @@ const Work: FC = () => (
     {WORK_EXPERIENCES.map((props, i) => (
       <WorkExperience key={"work" + i} {...props} />
     ))}
-  </Styled.Wrapper>
+  </Section>
 );
 
 export default Work;

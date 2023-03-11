@@ -6,7 +6,8 @@ export const Wrapper = styled(Section)`
 `;
 
 export const Avatar = styled.div`
-  background: url("images/avatar.png"), ${({ theme }) => theme.avatar} no-repeat;
+  background: url("images/avatar.png"),
+    ${({ theme }) => theme.gradient} no-repeat;
   background-size: cover;
   width: 150px;
   height: 150px;
@@ -15,7 +16,7 @@ export const Avatar = styled.div`
 
   &:hover {
     background: url("images/avatar-2.png"),
-      ${({ theme }) => theme.avatar} no-repeat;
+      ${({ theme }) => theme.gradient} no-repeat;
     background-size: cover;
   }
 `;

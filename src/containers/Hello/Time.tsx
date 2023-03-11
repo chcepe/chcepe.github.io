@@ -21,7 +21,7 @@ const Time = () => {
   const [dateState, setDateState] = React.useState(new Date());
 
   React.useEffect(() => {
-    setInterval(() => setDateState(new Date()), 800);
+    setInterval(() => setDateState(new Date()), 1000);
   }, []);
 
   return (

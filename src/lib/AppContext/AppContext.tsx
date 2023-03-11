@@ -1,4 +1,4 @@
-import { createContext, FC, useEffect, useState } from "react";
+import React from "react";
 import axios from "axios";
 import { ThemeProvider } from "styled-components";
 
@@ -23,20 +23,22 @@ const CONTEXT_INITIAL_VALUES: ContextProps = {
   blogs: [],
 };
 
-export const AppContext = createContext<ContextProps>(CONTEXT_INITIAL_VALUES);
+export const AppContext = React.createContext<ContextProps>(
+  CONTEXT_INITIAL_VALUES
+);
 
 interface Props {
   children: React.ReactNode;
 }
 
-const AppContextProvider: FC<Props> = ({ children }) => {
-  const [loadingBlogs, setLoadingBlogs] = useState(false);
+const AppContextProvider: React.FC<Props> = ({ children }) => {
+  const [loadingBlogs, setLoadingBlogs] = React.useState(false);
   const [darkMode, setDarkMode] = useLocalStorage<boolean>(
     "darkmode",
     CONTEXT_INITIAL_VALUES.darkMode
   );
 
-  const [blogs, setBlogs] = useState<Blog[]>([]);
+  const [blogs, setBlogs] = React.useState<Blog[]>([]);
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
@@ -52,7 +54,7 @@ const AppContextProvider: FC<Props> = ({ children }) => {
       .finally(() => setLoadingBlogs(false));
   };
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (!blogs.length && !loadingBlogs) fetchBlogs();
   }, [blogs, loadingBlogs]);
 
