@@ -12,6 +12,10 @@ export const Main = styled.div`
     transform: translateY(2%);
     opacity: 0.7;
   }
+
+  @${breakpoint.mobile} {
+    grid-template-columns: 50px 1fr;
+  }
 `;
 
 export const Details = styled.div`
@@ -43,6 +47,11 @@ export const Logo = styled.div<{ $src: string }>`
   height: 60px;
   border-radius: 100%;
   border: 1px solid ${color.grey50};
+
+  @${breakpoint.mobile} {
+    width: 50px;
+    height: 50px;
+  }
 `;
 
 export const Info = styled.div`

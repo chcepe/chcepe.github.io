@@ -38,7 +38,7 @@ const AboutMe: React.FC = () => {
         In my free time, I enjoy working on side projects to practice my skills
         outside of work. When I'm not coding, I find myself going for outdoor
         activities, cooking, travelling, attending meetups, doing some video
-        editing, or most of the time playing with my dog.
+        editing, or most of the time walking and playing with our dogs.
       </Text>
     </Styled.Wrapper>
   );

@@ -1,28 +1,7 @@
-import Section from "components/Section";
 import { css } from "styled-components";
 import { FiArrowUpRight } from "react-icons/fi";
 
 import styled, { breakpoint, color } from "theme";
-
-export const Wrapper = styled(Section)``;
-
-export const BlogList = styled.div`
-  display: flex;
-  flex-wrap: nowrap;
-  gap: 16px;
-  width: 100%;
-  padding: 0 20px;
-  overflow-x: auto;
-  overscroll-behavior-x: contain;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-
-  ::-webkit-scrollbar {
-    height: 0;
-    width: 0; /* Remove scrollbar space */
-    background: transparent; /* Optional: just make scrollbar invisible */
-  }
-`;
 
 const cover = css`
   position: absolute;
