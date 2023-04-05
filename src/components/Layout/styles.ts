@@ -7,8 +7,4 @@ export const Wrapper = styled.div`
   flex-direction: column;
   gap: 60px;
   overflow-x: hidden;
-
-  section:last-of-type {
-    margin-bottom: 60px;
-  }
 `;

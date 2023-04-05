@@ -57,7 +57,7 @@ export const Thumbnail = styled.div`
   background: ${({ theme }) => theme.gradient};
   position: relative;
   aspect-ratio: 4/3;
-  min-height: 200px;
+  height: 200px;
   flex: 0 0 auto;
   overflow: hidden;
   scroll-snap-align: center;

@@ -69,7 +69,7 @@ export const SocialLinks = styled.div`
 `;
 
 export const NotesWrapper = styled.div`
-  background: rgba(235, 235, 235, 0.7);
+  background: rgba(235, 235, 235, 0.6);
   border: 1px solid #a6a6a6;
   border-radius: 16px;
   overflow: hidden;

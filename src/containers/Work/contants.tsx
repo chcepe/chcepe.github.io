@@ -113,8 +113,8 @@ export const WORK_EXPERIENCES: WorkExperienceProps[] = [
         <a target="_blank" href="https://sindro.io/">
           Sindro.io
         </a>
-        's gym management platform, originally written in React classes and
-        Redux.
+        's gym management platform using React, TypeScript, and GraphQL,
+        originally written in React classes, Redux, and REST.
       </>,
       <>
         Contributed in the early stage of building{" "}

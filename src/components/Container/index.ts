@@ -1,3 +1,1 @@
-import { Container } from './styles';
-
-export default Container;
+export { Container as default } from "./styles";

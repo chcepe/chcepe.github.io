@@ -1,12 +1,14 @@
 import React from "react";
 import Typewriter from "typewriter-effect";
 import { useParallax } from "react-scroll-parallax";
+import { AiFillApple } from "react-icons/ai";
 
+import Flexbox from "components/Flexbox";
 import Text from "components/Text";
 
 import * as Styled from "./styles";
 import { SOCIAL_LINKS } from "./constants";
-import Time from "./Time";
+import Extras from "./Extras";
 
 const Hello: React.FC = () => {
   const parallaxBG = useParallax<HTMLDivElement>({
@@ -28,15 +30,20 @@ const Hello: React.FC = () => {
 
   return (
     <Styled.Wrapper center="all">
+      {/* Background */}
       <Styled.BG ref={parallaxBG.ref} />
 
+      {/* Apple-inspired notes */}
       <div ref={parallaxNotes.ref}>
-        <Time />
+        {/* Location & time */}
+        <Extras />
+
+        {/* Notes content */}
         <Styled.NotesWrapper>
           <Styled.NotesHeader>
-            <Styled.NotesNavs $color="#ec6a5e" />
-            <Styled.NotesNavs $color="#f4be4f" />
-            <Styled.NotesNavs $color="#61c653" />
+            {["#ec6a5e", "#f4be4f", "#61c653"].map((hexColor) => (
+              <Styled.NotesNavs key={hexColor} $color={hexColor} />
+            ))}
           </Styled.NotesHeader>
           <Styled.NotesContent>
             <Text className="intro" size="md" weight={300} block>
@@ -49,7 +56,9 @@ const Hello: React.FC = () => {
               <Typewriter
                 onInit={(typewriter) => {
                   typewriter
-                    .typeString("A software engineer based in Prague.")
+                    .typeString(
+                      "I create awesome experiences with React and Typescript."
+                    )
                     .start();
                 }}
               />
@@ -57,13 +66,24 @@ const Hello: React.FC = () => {
           </Styled.NotesContent>
         </Styled.NotesWrapper>
 
-        <Styled.SocialLinks ref={parallaxSocials.ref}>
-          {SOCIAL_LINKS.map(({ id, icon, link, name }) => (
-            <a href={link} title={name} target="_blank" key={id}>
-              {icon}
-            </a>
-          ))}
-        </Styled.SocialLinks>
+        {/* Dock inspired / Social Links */}
+        <div ref={parallaxSocials.ref}>
+          <Styled.SocialLinks>
+            {SOCIAL_LINKS.map(({ id, icon, link, name }) => (
+              <a href={link} title={name} target="_blank" key={id}>
+                {icon}
+              </a>
+            ))}
+          </Styled.SocialLinks>
+
+          {/* Inspiration */}
+          <Flexbox flexGap="4px" alignItems="center" justifyContent="center">
+            <AiFillApple color="#fff" size={22} />
+            <Text color="white">
+              Inspired by <strong>MacOS Ventura</strong>
+            </Text>
+          </Flexbox>
+        </div>
       </div>
     </Styled.Wrapper>
   );
