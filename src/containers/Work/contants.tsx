@@ -1,4 +1,5 @@
 import { Props as WorkExperienceProps } from "components/WorkExperience/WorkExperience";
+import { Company } from "models";
 
 export const WORK_EXPERIENCES: WorkExperienceProps[] = [
   {
@@ -21,7 +22,7 @@ export const WORK_EXPERIENCES: WorkExperienceProps[] = [
       "Go",
     ],
     company: {
-      name: "Omio",
+      id: Company.OMIO,
       logo: "/images/company-logos/omio.jpg",
     },
     achievements: [
@@ -90,7 +91,7 @@ export const WORK_EXPERIENCES: WorkExperienceProps[] = [
       "Webflow",
     ],
     company: {
-      name: "OAK'S LAB",
+      id: Company.OAKS_LAB,
       logo: "/images/company-logos/oakslab.jpg",
     },
     achievements: [
@@ -166,7 +167,7 @@ export const WORK_EXPERIENCES: WorkExperienceProps[] = [
       "OpenCV",
     ],
     company: {
-      name: "Accenture",
+      id: Company.ACCENTURE,
       logo: "/images/company-logos/accenture.jpg",
     },
     achievements: [
@@ -209,7 +210,7 @@ export const WORK_EXPERIENCES: WorkExperienceProps[] = [
       "Cognitive Services",
     ],
     company: {
-      name: "Tech One Global",
+      id: Company.TECH_ONE_GLOBAL,
       logo: "/images/company-logos/techone.jpg",
     },
     achievements: [
@@ -248,7 +249,7 @@ export const WORK_EXPERIENCES: WorkExperienceProps[] = [
       "Microsoft 365",
     ],
     company: {
-      name: "Microsoft",
+      id: Company.MICROSOFT,
       logo: "/images/company-logos/microsoft.jpg",
     },
     achievements: [

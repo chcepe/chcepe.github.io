@@ -4,7 +4,7 @@ import { ThemeProvider } from "styled-components";
 
 import useLocalStorage from "utils/hooks/useLocalStorage";
 import { theme } from "theme";
-import { Blog } from "utils/types";
+import { Blog } from "models";
 
 const { GlobalStyles } = theme;
 

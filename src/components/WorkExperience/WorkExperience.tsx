@@ -3,6 +3,7 @@ import React from "react";
 import Text from "components/Text";
 
 import * as Styled from "./WorkExperience.styled";
+import { COMPANY_NAME, Company, Project } from "models";
 
 type Technology =
   | "Javascript"
@@ -35,31 +36,33 @@ export interface Props {
   duration: string;
   technologies: Technology[];
   company: {
-    name: string;
+    id: Company;
     logo: string;
   };
   desc?: React.ReactNode;
   achievements?: React.ReactNode[];
 }
 
-const WorkExperience: React.FC<Props> = ({
+const WorkExperience: React.FC<Props & { projects: Project[] }> = ({
   title,
   duration,
   company,
   technologies,
   achievements,
   desc,
+  projects,
 }) => {
   const [expanded, setExpanded] = React.useState(false);
 
   return (
-    <Styled.Wrapper>
+    <Styled.Wrapper expanded={expanded}>
+      {/* Clickable work summary */}
       <Styled.Main onClick={() => setExpanded((prev) => !prev)}>
         <Styled.Logo $src={company.logo} />
         <Styled.Info>
           <Styled.Title>
             <Text weight={600}>
-              {title} @ {company.name}
+              {title} @ {COMPANY_NAME[company.id]}
             </Text>
             <Text color="grey100" size="xs">
               {duration}
@@ -75,11 +78,13 @@ const WorkExperience: React.FC<Props> = ({
       </Styled.Main>
 
       {expanded && (
-        <Styled.Details>
+        <>
+          {/* Description */}
           <Text size="xs" marginT="lg">
             {desc}
           </Text>
 
+          {/* Achievements */}
           <ul>
             {achievements?.map((a, i) => (
               <li key={title + i}>
@@ -89,7 +94,16 @@ const WorkExperience: React.FC<Props> = ({
               </li>
             ))}
           </ul>
-        </Styled.Details>
+
+          {/* Projects */}
+          <Styled.Projects>
+            {projects.map(({ id, companyId, name }) => (
+              <Text size="xs" key={`${companyId}-${id}`}>
+                {name}
+              </Text>
+            ))}
+          </Styled.Projects>
+        </>
       )}
     </Styled.Wrapper>
   );

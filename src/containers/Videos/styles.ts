@@ -23,8 +23,7 @@ export const VideoItemBG = styled.div<{ $bg: string }>`
   background: url("${({ $bg }) => $bg}") no-repeat;
   background-position: center;
   background-size: cover;
-  opacity: 0.2;
-  filter: grayscale(100%);
+  opacity: 0.5;
 `;
 
 export const PlayBtn = styled(BsPlayCircle)`
@@ -53,17 +52,19 @@ export const Content = styled.div`
   }
 `;
 
-export const Thumbnail = styled.div`
+export const ThumbnailWrapper = styled.div`
   background: ${({ theme }) => theme.gradient};
-  position: relative;
   aspect-ratio: 4/3;
   height: 200px;
   flex: 0 0 auto;
   overflow: hidden;
   scroll-snap-align: center;
   cursor: pointer;
-  padding: 10px;
+  padding: 12px;
+  border-radius: 16px;
+  opacity: 0.8;
 
+  &,
   * {
     transition: 0.2s ease-in-out all;
   }
@@ -71,6 +72,16 @@ export const Thumbnail = styled.div`
   @${breakpoint.mobile} {
     width: 60vw;
   }
+`;
+
+export const Thumbnail = styled.div`
+  background: rgba(0, 0, 0.5);
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
 `;
 
 export const VideoItemWrapper = styled.a`
@@ -83,13 +94,16 @@ export const VideoItemWrapper = styled.a`
       color: ${color.link};
     }
 
-    ${Thumbnail} {
-      background: ${({ theme }) => theme.gradient};
+    ${VideoItemBG} {
+      opacity: 0.4;
     }
 
-    ${VideoItemBG} {
-      opacity: 0.5;
-      transform: scale(1.05);
+    ${ThumbnailWrapper} {
+      opacity: 1;
+    }
+
+    ${Thumbnail} {
+      border-color: rgba(255, 255, 255, 0.9);
     }
 
     ${PlayBtn} {

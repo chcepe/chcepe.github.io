@@ -16,14 +16,50 @@ export const Main = styled.div`
   @${breakpoint.mobile} {
     grid-template-columns: 50px 1fr;
   }
+
+  // Disable selecting text on toggoe
+  * {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Supported by Chrome, Edge, Opera and Firefox */
+  }
 `;
 
-export const Details = styled.div`
-  padding: 0 0 24px;
+export const Projects = styled.div`
+  display: flex;
+  gap: 2px;
+  flex-wrap: wrap;
+
+  span {
+    opacity: 0.8;
+    background: ${({ theme }) => theme.gradient};
+    color: ${color.white};
+    padding: 4px 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  span:hover {
+    transform: translateY(1px);
+    opacity: 1;
+  }
 `;
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.div<{ expanded?: boolean }>`
   width: 100%;
+  padding-bottom: ${({ expanded }) => (expanded ? "24px" : 0)};
+
+  ${({ expanded }) =>
+    expanded
+      ? `
+  ${Main} {
+    padding-bottom: 0;
+  }`
+      : ``}
 
   span {
     line-height: 24px;
@@ -34,7 +70,7 @@ export const Wrapper = styled.div`
   }
 
   &:last-of-type {
-    ${Main}, ${Details} {
+    ${Main} {
       padding-bottom: 0;
     }
   }

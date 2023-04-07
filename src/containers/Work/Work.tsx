@@ -3,6 +3,7 @@ import React from "react";
 import WorkExperience from "components/WorkExperience";
 import Section from "components/Section";
 
+import projects from "data/projects";
 import { WORK_EXPERIENCES } from "./contants";
 
 const Work: React.FC = () => (
@@ -12,9 +13,19 @@ const Work: React.FC = () => (
       desc: "5+ years of working in engineering.",
     }}
   >
-    {WORK_EXPERIENCES.map((props, i) => (
-      <WorkExperience key={"work" + i} {...props} />
-    ))}
+    {WORK_EXPERIENCES.map((workExperience, i) => {
+      const workProjects = projects.filter(
+        (p) => p.companyId === workExperience.company.id
+      );
+
+      return (
+        <WorkExperience
+          key={"work" + i}
+          projects={workProjects}
+          {...workExperience}
+        />
+      );
+    })}
   </Section>
 );
 

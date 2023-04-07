@@ -18,7 +18,7 @@ export const BlogItemBG = styled.div<{ $bg: string }>`
   background-size: cover;
   backdrop-filter: blur(13px);
   mix-blend-mode: soft-light;
-  opacity: 0.5;
+  opacity: 0.2;
 `;
 
 export const BlogArrow = styled(FiArrowUpRight)`
@@ -54,12 +54,16 @@ export const BlogItem = styled.a`
   scroll-snap-align: center;
   cursor: pointer;
   padding: 10px;
+  opacity: 0.8;
 
+  &,
   * {
     transition: 0.2s ease-in-out all;
   }
 
   :hover {
+    opacity: 1;
+
     ${BlogItemBG} {
       opacity: 0.2;
     }

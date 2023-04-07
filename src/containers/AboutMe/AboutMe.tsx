@@ -31,7 +31,7 @@ const AboutMe: React.FC = () => {
         <br />
         Fast-forward to today, I have gained experience from various projects
         and helped other companies in building their products. Currently, I work
-        at a travel platform company, helping them build products for their
+        at a travel platform companyId, helping them build products for their
         partners.
         <br />
         <br />

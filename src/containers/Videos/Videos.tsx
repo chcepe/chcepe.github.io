@@ -19,11 +19,13 @@ const Videos: React.FC = () => {
       <ScrollableItems
         items={VIDEO_LIST.map(({ link, title, thumbnail }) => (
           <Styled.VideoItemWrapper href={link} target="_blank" key={link}>
-            <Styled.Thumbnail>
-              <Styled.VideoItemBG $bg={thumbnail} />
-              <Styled.PlayBtn />
-              <Styled.PlayBtnFilled />
-            </Styled.Thumbnail>
+            <Styled.ThumbnailWrapper>
+              <Styled.Thumbnail>
+                <Styled.VideoItemBG $bg={thumbnail} />
+                <Styled.PlayBtn />
+                <Styled.PlayBtnFilled />
+              </Styled.Thumbnail>
+            </Styled.ThumbnailWrapper>
             <Text weight="bold" size="xs" marginT="lg">
               {title}
             </Text>

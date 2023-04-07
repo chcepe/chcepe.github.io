@@ -1,0 +1,35 @@
+import ScrollableItems from "components/ScrollableItems/ScrollableItems";
+import PROJECTS from "data/projects";
+import Text from "components/Text";
+
+import * as Styled from "./Projects.styled";
+import LinkArrow from "components/LinkArrow";
+
+const Projects = () => {
+  return (
+    <Styled.Wrapper
+      container={{ content: false }}
+      header={{
+        title: "Projects",
+        desc: "Some of the projects I've worked on.",
+      }}
+    >
+      <ScrollableItems
+        items={PROJECTS.map(({ id, name, thumbnail, logo }) => (
+          <Styled.ProjectItem href={id} target="_blank" key={id}>
+            <Styled.ProjectItemBG $bg={thumbnail} />
+            <LinkArrow />
+            <Styled.Content>
+              <Styled.Logo $url={logo} />
+              <Text maxWidth="50%" weight={700} color="white">
+                {name}
+              </Text>
+            </Styled.Content>
+          </Styled.ProjectItem>
+        ))}
+      />
+    </Styled.Wrapper>
+  );
+};
+
+export default Projects;
