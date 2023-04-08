@@ -1,7 +1,7 @@
 import React from "react";
 import Typewriter from "typewriter-effect";
 import { useParallax } from "react-scroll-parallax";
-import { AiFillApple } from "react-icons/ai";
+import { AiFillCamera } from "react-icons/ai";
 
 import Flexbox from "components/Flexbox";
 import Text from "components/Text";
@@ -11,10 +11,10 @@ import { SOCIAL_LINKS } from "./constants";
 import Extras from "./Extras";
 
 const Hello: React.FC = () => {
-  const parallaxBG = useParallax<HTMLDivElement>({
+  const parallaxBG = useParallax<HTMLImageElement>({
     speed: -10,
     scale: [1.3, 3],
-    opacity: [1, 0.3],
+    opacity: [0.3, 0.1],
     shouldAlwaysCompleteAnimation: true,
   });
 
@@ -31,7 +31,10 @@ const Hello: React.FC = () => {
   return (
     <Styled.Wrapper center="all">
       {/* Background */}
-      <Styled.BG ref={parallaxBG.ref} />
+      <Styled.BG
+        src={`https://source.unsplash.com/random/1920x1080/?prague&t=${new Date().getTime()}`}
+        ref={parallaxBG.ref}
+      />
 
       {/* Apple-inspired notes */}
       <div ref={parallaxNotes.ref}>
@@ -46,13 +49,10 @@ const Hello: React.FC = () => {
             ))}
           </Styled.NotesHeader>
           <Styled.NotesContent>
-            <Text className="intro" size="md" weight={300} block>
-              Hello, I'm
+            <Text className="intro" size="md" weight={700} block>
+              Hello, I'm Chris!
             </Text>
-            <Text className="name" size="xl" weight={900} block>
-              Christian Cepe
-            </Text>
-            <Text className="desc" block>
+            <Text marginT="lg" className="desc" block>
               <Typewriter
                 onInit={(typewriter) => {
                   typewriter
@@ -78,13 +78,16 @@ const Hello: React.FC = () => {
 
           {/* Inspiration */}
           <Flexbox flexGap="4px" alignItems="center" justifyContent="center">
-            <AiFillApple color="#fff" size={22} />
-            <Text color="white">
-              Inspired by <strong>MacOS Ventura</strong>
+            <AiFillCamera color="#fff" size={22} />
+            <Text marginL="md" size="sm" color="white">
+              Inspired by <strong>MacOS Ventura</strong> | Photo by{" "}
+              <strong>Unsplash</strong>
             </Text>
           </Flexbox>
         </div>
       </div>
+
+      <Styled.ScrollIcon />
     </Styled.Wrapper>
   );
 };

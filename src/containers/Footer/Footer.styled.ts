@@ -11,5 +11,6 @@ export const Wrapper = styled(Container)`
 export const Signature = styled.img.attrs({ src: "images/digital-sig.png" })`
   display: block;
   margin: 40px auto;
+  opacity: 0.7;
   height: 70px;
 `;

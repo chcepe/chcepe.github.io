@@ -11,6 +11,10 @@ export const Main = styled.div`
   &:hover {
     transform: translateY(2%);
     opacity: 0.7;
+
+    .company-name {
+      color: ${color.link};
+    }
   }
 
   @${breakpoint.mobile} {
@@ -28,7 +32,7 @@ export const Main = styled.div`
   }
 `;
 
-export const Projects = styled.div`
+export const ProjectList = styled.div`
   display: flex;
   gap: 2px;
   flex-wrap: wrap;

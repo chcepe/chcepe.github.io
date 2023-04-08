@@ -61,7 +61,7 @@ const WorkExperience: React.FC<Props & { projects: Project[] }> = ({
         <Styled.Logo $src={company.logo} />
         <Styled.Info>
           <Styled.Title>
-            <Text weight={600}>
+            <Text className="company-name" weight={600}>
               {title} @ {COMPANY_NAME[company.id]}
             </Text>
             <Text color="grey100" size="xs">
@@ -96,13 +96,13 @@ const WorkExperience: React.FC<Props & { projects: Project[] }> = ({
           </ul>
 
           {/* Projects */}
-          <Styled.Projects>
+          <Styled.ProjectList>
             {projects.map(({ id, companyId, name }) => (
               <Text size="xs" key={`${companyId}-${id}`}>
                 {name}
               </Text>
             ))}
-          </Styled.Projects>
+          </Styled.ProjectList>
         </>
       )}
     </Styled.Wrapper>

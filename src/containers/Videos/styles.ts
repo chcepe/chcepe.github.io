@@ -62,7 +62,7 @@ export const ThumbnailWrapper = styled.div`
   cursor: pointer;
   padding: 12px;
   border-radius: 16px;
-  opacity: 0.8;
+  opacity: 0.7;
 
   &,
   * {
@@ -81,7 +81,7 @@ export const Thumbnail = styled.div`
   height: 100%;
   overflow: hidden;
   border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  border: 1px solid ${color.white};
 `;
 
 export const VideoItemWrapper = styled.a`

@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <Styled.Wrapper>
       <Styled.Signature />
-      <Text align="center" color="grey100">
+      <Text align="center" color="grey100" marginT={-60}>
         &copy; {new Date().getFullYear()} <strong>Christian Cepe</strong>
       </Text>
     </Styled.Wrapper>

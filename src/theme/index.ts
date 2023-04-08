@@ -50,7 +50,7 @@ const color = {
   grey70: "#808080",
   grey60: "#b3b3b3",
   grey50: "#e6e6e6",
-  link: "#2a9df4",
+  link: "rgba(57,4,149,1)",
 };
 
 export interface THEME_TYPES {

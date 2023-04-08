@@ -16,17 +16,8 @@ const Flexbox = styled.div<FlexBox>`
   align-content: ${({ alignContent = "stretch" }) => alignContent};
   align-items: ${({ alignItems = "stretch" }) => alignItems};
   display: ${({ display = "flex" }) => display};
-  ${({ flexFlow = "row", flexDirection = "row", flexWrap = "wrap" }) =>
-    !flexFlow &&
-    css`
-      flex-direction: ${flexDirection};
-      flex-wrap: ${flexWrap};
-    `}
-  ${({ flexFlow }) =>
-    flexFlow &&
-    css`
-      flex-flow: ${flexFlow};
-    `}
+  flex-direction: ${({ flexDirection = "row" }) => flexDirection};
+  flex-wrap: ${({ flexWrap = "initial" }) => flexWrap};
   justify-content: ${({ justifyContent }) => justifyContent};
   width: ${({ width = "auto" }) => width};
   gap: ${({ flexGap = "0" }) => flexGap};

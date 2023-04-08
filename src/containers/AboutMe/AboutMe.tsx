@@ -3,6 +3,7 @@ import { useParallax } from "react-scroll-parallax";
 
 import Text from "components/Text";
 import * as Styled from "./styles";
+import Avatar from "components/Avatar";
 
 const AboutMe: React.FC = () => {
   const parallaxRocket = useParallax<HTMLImageElement>({
@@ -10,17 +11,18 @@ const AboutMe: React.FC = () => {
     translateX: [0, 500],
     translateY: [0, -300],
     scale: [1, 1.2],
+    rotate: [0, 20],
   });
 
   return (
     <Styled.Wrapper header={{ title: "About me" }}>
-      <Styled.Avatar />
+      <Avatar withHover />
 
       <Styled.RocketContainer>
         <Styled.Rocket ref={parallaxRocket.ref} />
       </Styled.RocketContainer>
 
-      <Text marginB={16} lineHeight="28px" block>
+      <Text marginT="xl" marginB={16} lineHeight="28px" block>
         My name is Chris and I love building things for the web.
         <br />
         <br />
@@ -30,8 +32,8 @@ const AboutMe: React.FC = () => {
         <br />
         <br />
         Fast-forward to today, I have gained experience from various projects
-        and helped other companies in building their products. Currently, I work
-        at a travel platform companyId, helping them build products for their
+        and helped other companies in building their products. Currently I work
+        at a travel platform company, helping them build products for their
         partners.
         <br />
         <br />

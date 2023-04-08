@@ -6,21 +6,19 @@ export const Wrapper = styled(Section)`
   height: 100vh;
   position: relative;
   overflow: hidden;
-  border-bottom-right-radius: 16px;
-  border-bottom-left-radius: 16px;
 `;
 
-export const BG = styled.div`
+export const BG = styled.img<{ src: string }>`
   width: 100%;
   height: 100%;
-  background: url("images/prague.jpg") no-repeat;
-  background-size: cover;
-  background-position: center;
   position: absolute;
   top: 0;
   left: 0;
-  mix-blend-mode: soft-light;
+  mix-blend-mode: overlay;
   pointer-events: none;
+  filter: grayscale(1);
+  object-fit: cover;
+  object-position: center;
 `;
 
 export const SocialLinks = styled.div`
@@ -61,6 +59,11 @@ export const SocialLinks = styled.div`
       transform: scale(1.8) translateY(2px);
       transform-origin: center bottom;
 
+      @${breakpoint.mobile} {
+        transform: scale(1.2);
+        margin: 0 2px;
+      }
+
       svg {
         fill: ${color.white};
       }
@@ -86,25 +89,13 @@ export const NotesHeader = styled.div`
 `;
 
 export const NotesContent = styled.div`
-  padding: 20px 40px;
-
-  span.intro,
-  span.name,
-  span.desc {
-    line-height: 60px;
-  }
+  padding: 36px;
 
   @${breakpoint.mobile} {
-    padding: 24px;
-
-    span.intro,
-    span.name {
-      line-height: 46px;
-    }
+    padding: 36px 24px;
 
     span.desc {
-      margin-top: 18px;
-      line-height: 20px;
+      margin-top: 8px;
     }
   }
 `;
@@ -115,4 +106,45 @@ export const NotesNavs = styled.div<{ $color: string }>`
   background: ${({ $color }) => $color};
   border-radius: 100%;
   border: 0.2px solid #a6a6a6;
+`;
+
+export const ScrollIcon = styled.div`
+  &,
+  &:before {
+    position: absolute;
+    left: 50%;
+  }
+
+  & {
+    width: 28px;
+    height: 50px;
+    margin-left: -20px;
+    margin-top: -35px;
+    box-shadow: inset 0 0 0 1px #fff;
+    border-radius: 25px;
+    bottom: 10%;
+  }
+
+  &:before {
+    content: "";
+    width: 4px;
+    height: 4px;
+    background: #fff;
+    margin-left: -2px;
+    top: 8px;
+    border-radius: 4px;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-name: scroll;
+  }
+
+  @keyframes scroll {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+  }
 `;
