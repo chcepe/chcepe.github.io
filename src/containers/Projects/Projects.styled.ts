@@ -46,12 +46,12 @@ export const Content = styled.div`
   transform: translateY(10px);
 `;
 
-export const ProjectItem = styled.a`
+export const ProjectItem = styled.div`
   background: ${({ theme }) => theme.gradient};
   position: relative;
   width: 20vw;
   aspect-ratio: 1/1;
-  border-radius: 16px;
+  border-radius: 12px;
   flex: 0 0 auto;
   overflow: hidden;
   scroll-snap-align: center;

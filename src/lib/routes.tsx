@@ -1,16 +1,15 @@
-import { HashRouter as Router, Route, Switch } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 
-import ROUTES from "utils/routes";
+import Home from "pages/home";
+import Project from "pages/project";
 
-const ALL_ROUTES = Object.keys(ROUTES).map((key) => {
-  const { path, component, exact } = ROUTES[key as keyof typeof ROUTES];
-  return <Route key={path} path={path} component={component} exact={exact} />;
-});
-
-const Routes = () => (
-  <Router>
-    <Switch>{ALL_ROUTES}</Switch>
-  </Router>
+const AllRoutes = () => (
+  <HashRouter>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/project/:id" element={<Project />} />
+    </Routes>
+  </HashRouter>
 );
 
-export default Routes;
+export default AllRoutes;

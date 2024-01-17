@@ -3,7 +3,7 @@ import styled from "theme";
 export const Wrapper = styled.div`
   display: flex;
   flex-wrap: nowrap;
-  gap: 16px;
+  gap: 12px;
   width: 100%;
   padding: 0 20px;
   overflow-x: auto;

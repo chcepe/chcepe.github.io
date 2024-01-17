@@ -5,12 +5,12 @@ import Container from "components/Container";
 import Avatar from "components/Avatar";
 import Text from "components/Text";
 import Flexbox from "components/Flexbox/Flexbox";
-// import useScrollPercentage from "hooks/useScrollPercentage";
+import useScrollPercentage from "hooks/useScrollPercentage";
 
 import * as Styled from "./StickyHeader.styled";
 
 const StickyHeader = () => {
-  // const percentage = useScrollPercentage();
+  const { scrollPercent } = useScrollPercentage();
 
   return (
     <Styled.Wrapper>
@@ -25,7 +25,7 @@ const StickyHeader = () => {
           </Flexbox>
         </Flexbox>
       </Container>
-      {/* <Styled.ScrollPercentage width={percentage} /> */}
+      <Styled.ScrollPercentage width={scrollPercent} />
     </Styled.Wrapper>
   );
 };

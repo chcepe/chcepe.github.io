@@ -28,7 +28,7 @@ export const SocialLinks = styled.div`
   height: 100%;
   display: flex;
   gap: 8px;
-  border-radius: 16px;
+  border-radius: 12px;
   align-items: center;
   justify-content: center;
   background: rgba(83, 83, 83, 0.25);
@@ -74,7 +74,7 @@ export const SocialLinks = styled.div`
 export const NotesWrapper = styled.div`
   background: rgba(235, 235, 235, 0.6);
   border: 1px solid #a6a6a6;
-  border-radius: 16px;
+  border-radius: 12px;
   overflow: hidden;
   box-shadow: 0px 10px 50px 0px rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(2px);

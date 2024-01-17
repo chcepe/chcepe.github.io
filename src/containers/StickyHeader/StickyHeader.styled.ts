@@ -25,5 +25,5 @@ export const ScrollPercentage = styled.div<{ width: number }>`
   background: ${color.grey60};
   height: 2px;
   width: ${({ width }) => width}%;
-  transition: all 0.05s ease-in-out;
+  transition: width 0.05s ease-in-out;
 `;

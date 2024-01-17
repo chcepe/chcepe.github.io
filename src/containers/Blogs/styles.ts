@@ -48,7 +48,7 @@ export const BlogItem = styled.a`
   position: relative;
   width: 40vw;
   height: 250px;
-  border-radius: 16px;
+  border-radius: 12px;
   flex: 0 0 auto;
   overflow: hidden;
   scroll-snap-align: center;

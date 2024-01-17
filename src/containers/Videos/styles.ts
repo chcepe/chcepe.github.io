@@ -61,7 +61,7 @@ export const ThumbnailWrapper = styled.div`
   scroll-snap-align: center;
   cursor: pointer;
   padding: 12px;
-  border-radius: 16px;
+  border-radius: 12px;
   opacity: 0.7;
 
   &,

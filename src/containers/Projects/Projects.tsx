@@ -1,3 +1,5 @@
+import { useNavigate } from "react-router-dom";
+
 import ScrollableItems from "components/ScrollableItems/ScrollableItems";
 import PROJECTS from "data/projects";
 import Text from "components/Text";
@@ -6,6 +8,7 @@ import * as Styled from "./Projects.styled";
 import LinkArrow from "components/LinkArrow";
 
 const Projects = () => {
+  const navigate = useNavigate();
   return (
     <Styled.Wrapper
       container={{ content: false }}
@@ -16,7 +19,12 @@ const Projects = () => {
     >
       <ScrollableItems
         items={PROJECTS.map(({ id, name, thumbnail, logo }) => (
-          <Styled.ProjectItem href={id} target="_blank" key={id}>
+          <Styled.ProjectItem
+            onClick={() => {
+              navigate(`/projects/${id}`);
+            }}
+            key={id}
+          >
             <Styled.ProjectItemBG $bg={thumbnail} />
             <LinkArrow />
             <Styled.Content>
