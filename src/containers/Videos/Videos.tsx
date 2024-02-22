@@ -1,13 +1,15 @@
 import React from "react";
 
-import ScrollableItems from "components/ScrollableItems";
 import Text from "components/Text";
 import Section from "components/Section";
 
 import * as Styled from "./styles";
 import { VIDEO_LIST } from "./constants";
+import YoutubeThumbnail from "components/YoutubeThumbnail/YoutubeThumbnail";
 
 const Videos: React.FC = () => {
+  const [activeHover, setActiveHover] = React.useState<string>();
+
   return (
     <Section
       container={{ content: false }}
@@ -16,22 +18,34 @@ const Videos: React.FC = () => {
         desc: "Hmm, I make videos ocasionally.",
       }}
     >
-      <ScrollableItems
-        items={VIDEO_LIST.map(({ link, title, thumbnail }) => (
-          <Styled.VideoItemWrapper href={link} target="_blank" key={link}>
-            <Styled.ThumbnailWrapper>
-              <Styled.Thumbnail>
-                <Styled.VideoItemBG $bg={thumbnail} />
-                <Styled.PlayBtn />
-                <Styled.PlayBtnFilled />
-              </Styled.Thumbnail>
-            </Styled.ThumbnailWrapper>
-            <Text weight="bold" size="xs" marginT="lg">
-              {title}
-            </Text>
-          </Styled.VideoItemWrapper>
+      <Styled.List>
+        {VIDEO_LIST.map(({ id, title }) => (
+          <Styled.ItemWrapper
+            key={id}
+            href={`https://www.youtube.com/watch?v=${id}`}
+            target="_blank"
+            disabled={Boolean(activeHover && activeHover !== id)}
+            onMouseEnter={() => setActiveHover(id)}
+            onMouseLeave={() => setActiveHover(undefined)}
+          >
+            <Styled.Details>
+              <Styled.PlayBtn />
+              <Text weight={700} size="sm" color="white">
+                {title}
+              </Text>
+            </Styled.Details>
+            <Styled.ItemOverlay />
+            <YoutubeThumbnail
+              defaultImg={`https://img.youtube.com/vi/${id}/maxresdefault.jpg`}
+              gifImages={[
+                `https://i.ytimg.com/vi/${id}/sd1.jpg`,
+                `https://i.ytimg.com/vi/${id}/sd2.jpg`,
+                `https://i.ytimg.com/vi/${id}/sd3.jpg`,
+              ]}
+            />
+          </Styled.ItemWrapper>
         ))}
-      />
+      </Styled.List>
     </Section>
   );
 };

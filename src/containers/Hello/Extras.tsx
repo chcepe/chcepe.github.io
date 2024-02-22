@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import { TiLocation } from "react-icons/ti";
-import { AiOutlineCalendar, AiOutlineClockCircle } from "react-icons/ai";
+import { AiOutlineClockCircle } from "react-icons/ai";
 
 import { color, margin } from "theme";
 import Text from "components/Text";
+import { ACTIVITIES, getActivity } from "./utils";
 
 const Wrapper = styled.div`
   display: flex;
@@ -33,37 +33,30 @@ const Time = () => {
     setInterval(() => setDateState(new Date()), 1000);
   }, []);
 
+  const activity = getActivity(dateState);
+  const ActivityIcon = ACTIVITIES[activity].icon;
+
   return (
     <Wrapper>
-      {/* Location */}
       <a href="https://en.wikipedia.org/wiki/Prague" target="_blank">
         <InfoWrapper>
-          <TiLocation />
-          <Text weight="bold" color="white">
-            Prague, CZ
+          <AiOutlineClockCircle />
+          <Text color="white">
+            My local time is{" "}
+            {dateState.toLocaleString("en-US", {
+              hour: "numeric",
+              minute: "numeric",
+              hour12: true,
+            })}
           </Text>
         </InfoWrapper>
       </a>
 
-      {/* Calendar */}
-      <InfoWrapper>
-        <AiOutlineCalendar />
-        <Text marginR="md">
-          {dateState.toLocaleDateString("en-GB", {
-            day: "numeric",
-            month: "short",
-            year: "numeric",
-          })}
-        </Text>
+      {/* Activity */}
 
-        <AiOutlineClockCircle />
-        <Text>
-          {dateState.toLocaleString("en-US", {
-            hour: "numeric",
-            minute: "numeric",
-            hour12: true,
-          })}
-        </Text>
+      <InfoWrapper>
+        <ActivityIcon />
+        <Text color="white">{ACTIVITIES[activity].text}</Text>
       </InfoWrapper>
     </Wrapper>
   );

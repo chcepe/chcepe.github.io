@@ -43,7 +43,7 @@ export const Content = styled.div`
   }
 `;
 
-export const BlogItem = styled.a`
+export const BlogItem = styled.a<{ disabled?: boolean }>`
   background: ${({ theme }) => theme.gradient};
   position: relative;
   width: 40vw;
@@ -54,7 +54,7 @@ export const BlogItem = styled.a`
   scroll-snap-align: center;
   cursor: pointer;
   padding: 10px;
-  opacity: 0.8;
+  opacity: ${({ disabled }) => (disabled ? 0.6 : 0.8)};
 
   &,
   * {

@@ -1,3 +1,4 @@
+import React from "react";
 import { useNavigate } from "react-router-dom";
 
 import ScrollableItems from "components/ScrollableItems/ScrollableItems";
@@ -9,6 +10,8 @@ import LinkArrow from "components/LinkArrow";
 
 const Projects = () => {
   const navigate = useNavigate();
+  const [activeHover, setActiveHover] = React.useState<string>();
+
   return (
     <Styled.Wrapper
       container={{ content: false }}
@@ -24,6 +27,9 @@ const Projects = () => {
               navigate(`/projects/${id}`);
             }}
             key={id}
+            disabled={Boolean(activeHover && activeHover !== id)}
+            onMouseEnter={() => setActiveHover(id)}
+            onMouseLeave={() => setActiveHover(undefined)}
           >
             <Styled.ProjectItemBG $bg={thumbnail} />
             <LinkArrow />

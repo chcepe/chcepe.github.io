@@ -46,7 +46,7 @@ export const Content = styled.div`
   transform: translateY(10px);
 `;
 
-export const ProjectItem = styled.div`
+export const ProjectItem = styled.div<{ disabled?: boolean }>`
   background: ${({ theme }) => theme.gradient};
   position: relative;
   width: 20vw;
@@ -57,7 +57,7 @@ export const ProjectItem = styled.div`
   scroll-snap-align: center;
   cursor: pointer;
   padding: 10px;
-  opacity: 0.8;
+  opacity: ${({ disabled }) => (disabled ? 0.6 : 0.8)};
 
   &,
   * {
