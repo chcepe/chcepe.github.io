@@ -8,6 +8,7 @@ import Link from "components/Link";
 
 import * as S from "./styles";
 import * as T from "./types";
+import { getFirstImgSrc } from "./utils";
 
 const Skeletons = ({ darkMode }: { darkMode?: boolean }) => (
   <>
@@ -30,9 +31,9 @@ const Blogs: FC<T.Props> = () => {
         <Skeletons />
       ) : (
         <>
-          {blogs.map(({ thumbnail, title, pubDate, link }) => (
+          {blogs.map(({ title, pubDate, link, description }) => (
             <Link href={link} target="_blank" key={link}>
-              <S.Item bg={thumbnail} darkMode={darkMode}>
+              <S.Item bg={getFirstImgSrc(description)} darkMode={darkMode}>
                 <S.Content>
                   <Text size="md" weight="bold" block>
                     {formatDate(pubDate)}

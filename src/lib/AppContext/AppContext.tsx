@@ -78,8 +78,10 @@ const AppContextProvider: FC = ({ children }) => {
       }}
     >
       <ThemeProvider theme={darkMode ? theme.darkMode : theme.lightMode}>
-        <GlobalStyles />
-        {children}
+        <>
+          <GlobalStyles />
+          {children}
+        </>
       </ThemeProvider>
     </AppContext.Provider>
   );
